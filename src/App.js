@@ -9,11 +9,6 @@ import './css/side-menu.css'
 
 
 class App extends Component {
-
-
-
-
-
   render() {
     return (
       <div id="layout">
@@ -28,7 +23,6 @@ class App extends Component {
               <li className="pure-menu-item"><Link to="/nivochart" className="pure-menu-link">NivoRocks</Link></li>
               <li className="pure-menu-item"><Link to="/devexpress" className="pure-menu-link">DevExpress</Link></li>
               <li className="pure-menu-item"><Link to="/recharts" className="pure-menu-link">Recharts</Link></li>
-              <li className="pure-menu-item"><Link to="/plotlyjs" className="pure-menu-link">PlotlyJs</Link></li>
             </ul>
           </div>
         </div>

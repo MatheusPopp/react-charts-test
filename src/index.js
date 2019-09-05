@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import NivoChart from './components/NivoChart';
 import Recharts from './components/Recharts';
-import Plotly from './components/Plotly';
 import DevExpressChart from './components/DevExpressChart';
 import Home from './components/Home';
 
@@ -19,7 +18,6 @@ ReactDOM.render(
             <Route path="/nivochart" component={NivoChart} />
             <Route path="/devexpress" component={DevExpressChart} />
             <Route path="/recharts" component={Recharts} />
-            <Route path="/plotlyjs" component={Plotly} />
         </Switch>
     </App>
 </Router>,
