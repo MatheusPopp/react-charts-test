@@ -27,6 +27,8 @@ class App extends Component {
             <ul className="pure-menu-list">
               <li className="pure-menu-item"><Link to="/nivochart" className="pure-menu-link">NivoRocks</Link></li>
               <li className="pure-menu-item"><Link to="/devexpress" className="pure-menu-link">DevExpress</Link></li>
+              <li className="pure-menu-item"><Link to="/recharts" className="pure-menu-link">Recharts</Link></li>
+              <li className="pure-menu-item"><Link to="/plotlyjs" className="pure-menu-link">PlotlyJs</Link></li>
             </ul>
           </div>
         </div>

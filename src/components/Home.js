@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container'
 
 class Home extends Component {
