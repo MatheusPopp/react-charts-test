@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import {
-    ComposedChart, BarChart, Bar, Line, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 const data = [
