@@ -20,9 +20,11 @@ class App extends Component {
           <div className="pure-menu">
             <Link to="/" className="pure-menu-link">Chart test</Link>
             <ul className="pure-menu-list">
-              <li className="pure-menu-item"><Link to="/nivochart" className="pure-menu-link">NivoRocks</Link></li>
-              <li className="pure-menu-item"><Link to="/devexpress" className="pure-menu-link">DevExpress</Link></li>
+              <li className="pure-menu-item"><Link to="/nivochart" className="pure-menu-link">Nivo Rocks</Link></li>
+              <li className="pure-menu-item"><Link to="/devexpress" className="pure-menu-link">Dev Express</Link></li>
               <li className="pure-menu-item"><Link to="/recharts" className="pure-menu-link">Recharts</Link></li>
+              <li className="pure-menu-item"><Link to="/reactgooglechart" className="pure-menu-link">React Google Charts</Link></li>
+
             </ul>
           </div>
         </div>

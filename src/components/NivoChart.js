@@ -207,7 +207,7 @@ const Line = ({ bars, xScale, yScale }) => {
 
 const BarWithLine = () => (
 
-    <Bar
+    <ResponsiveBar
         width={500}
         height={400}
         data={data}

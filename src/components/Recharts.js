@@ -1,30 +1,27 @@
 import React, { PureComponent, Fragment } from 'react';
 import {
-    BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    ComposedChart, Area, Label, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 const data = [
     {
-        name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        name: 'Jun-19', reqVol: 4100, premVol: 4100, flatVol: 2200, futHed: 0 , crmDeltas: 0, flatPx: 329.59, refFOB: 329.95, mktFOB: 331.46
     },
     {
-        name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        name: 'Jul-19', reqVol: 4100, premVol: 4100, flatVol: 2200, futHed: 3200 , crmDeltas: 4050, flatPx: 329.59, refFOB: 329.95, mktFOB: 331.46
     },
     {
-        name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        name: 'Ago-19', reqVol: 4100, premVol: 4100, flatVol: 0, futHed: 4000 , crmDeltas: 0, flatPx: null, refFOB: 335, mktFOB: 335
     },
     {
-        name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        name: 'Sep-19', reqVol: 4100, premVol: 0, flatVol: 0, futHed: 968 , crmDeltas: 0, flatPx: null, refFOB: null, mktFOB: 337
     },
     {
-        name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        name: 'Oct-19', reqVol: 4100, premVol: 0, flatVol: 0, futHed: 1026 , crmDeltas: 2600, flatPx: null, refFOB: null, mktFOB: 340
     },
     {
-        name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
-    },
-    {
-        name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
-    },
+        name: 'Nov-19', reqVol: 4100, premVol: 0, flatVol: 0, futHed: 998 , crmDeltas: 0, flatPx: null, refFOB: null, mktFOB: 345
+    }
 ];
 
 export default class Example extends PureComponent {
@@ -33,24 +30,37 @@ export default class Example extends PureComponent {
     render() {
         return (
             <Fragment>
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-            <BarChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                    top: 20, right: 30, left: 20, bottom: 5,
-                }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-                <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
-                <Bar dataKey="uv" fill="#ffc658" />
-               
-            </BarChart>
+                <ComposedChart width={1000} height={500} data={data} stroke={'#22222'}>
+                    <XAxis name="Months" dataKey="name">
+                        <Label value="MONTHS" offset={0} position="insideBottom" />
+                    </XAxis>
+                    <YAxis yAxisId={0} orientation="left" stroke="#8884d8">
+                        <Label angle={90} position='left' style={{ textAnchor: 'middle' }}>
+                            Vertical Label!
+                        </Label>
+                    </YAxis>
+                    <YAxis yAxisId={1} orientation="right"  domain={[320, 345]} ticks={[320, 325, 330, 335, 340, 345]} stroke="#82ca9d">
+                        <Label angle={90} position='right' style={{ textAnchor: 'middle' }}>
+                            Vertical Label!
+                        </Label>                        
+                    </YAxis>
+                    <Tooltip />
+                    <Legend />
+                    <CartesianGrid stroke="#2222" />
+                    <Bar dataKey="reqVol" barSize={20} fill="#3073b7" />
+                    <Bar dataKey="premVol" barSize={20} fill="#fccca6" />
+                    <Bar dataKey="flatVol" barSize={20} fill="#a5d38a" />
+                    <Bar dataKey="futHed" barSize={20} fill="#c18666" />
+                    <Bar dataKey="crmDeltas" barSize={20} fill="#16a458" />
+
+                    <Line yAxisId={1} type="monotone" dataKey="flatPx" stroke="#ffb14e" />
+                    <Line yAxisId={1} type="monotone" dataKey="refFOB" stroke="#f30502" />
+                    <Line yAxisId={1} type="monotone" dataKey="mktFOB" stroke="#413ea0" />
+
+
+
+
+                </ComposedChart>
             </Fragment>
 
         );
