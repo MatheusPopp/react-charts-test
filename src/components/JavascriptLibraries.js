@@ -35,8 +35,10 @@ class Main extends Component {
                         </select>
                     </div>
                 </div>
-                <div className="chartContainer">
-                    <JavascriptLibraries type={this.state.chartId}></JavascriptLibraries>
+                <div className="isResizable">
+                    <div className="chartContainer">
+                        <JavascriptLibraries type={this.state.chartId}></JavascriptLibraries>
+                    </div>
                 </div>
             </Fragment>
         )

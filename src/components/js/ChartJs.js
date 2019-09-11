@@ -137,6 +137,7 @@ class CustomChart extends Component {
 
         this.myChart = new Chart(this.chartRef.current, {
             type: 'bar',
+            responsive: true,
             data: barChartData,
             options: {
                 backgroundColor: '#3b3b3b',
@@ -148,9 +149,14 @@ class CustomChart extends Component {
                     fontColor: '#FFF'
                 },
                 tooltips: {
-                    mode: 'point'
+                    mode: 'point',
+                    backgroundColor: '#3b3b3b'
                 },
-                responsive: true,
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
                         stacked: true,
@@ -190,7 +196,7 @@ class CustomChart extends Component {
                     }]
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                     labels: {
                         fontSize: 15,
                         fontFamily: 'arial',
@@ -206,7 +212,6 @@ class CustomChart extends Component {
         return (
             <Fragment>
                 <canvas ref={this.chartRef}></canvas>
-                <button onClick={this.expandChart}>Expand</button>
             </Fragment>
             
         );
